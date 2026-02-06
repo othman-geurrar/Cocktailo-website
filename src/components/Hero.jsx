@@ -2,10 +2,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 import { useRef } from 'react';
+import {useMediaQuery} from "react-responsive";
 
 const Hero = () => {
   const rightOrangeRef = useRef(null);
   const viewCocktailsRef = useRef(null);
+  const videoRef = useRef();
+  const isMobile = useMediaQuery({maxWidth:767});
 
   useGSAP(() => {
     const heroSplit = new SplitText('.title', { types: 'chars , word' });
@@ -38,6 +41,24 @@ const Hero = () => {
     })  
     .to('.right-orange', { y: 200 }, 0)
     .to('.left-leaf', { y: -200 }, 0);
+    const startValue = isMobile ? 'top 50%' : 'center 60%';
+    const endValue = isMobile ? '120% top' : 'bottom top';
+
+    let tl = gsap.timeline({
+	 scrollTrigger: {
+		trigger: "video",
+		start: startValue,
+		end: endValue,
+		scrub: true,
+		pin: true,
+	 },
+	});
+	
+	videoRef.current.onloadedmetadata = () => {
+	 tl.to(videoRef.current, {
+		currentTime: videoRef.current.duration,
+	 });
+	};
  
   }, []);
 
@@ -66,7 +87,7 @@ const Hero = () => {
           <h1 className="title">MOJITO</h1>
 
           <img src="/images/hero-left-leaf.png" alt="left-leaf" className="left-leaf"/>
-          <img ref={rightOrangeRef} src="/images/orange.png" alt="right-orange" className="absolute right-orange top-1/2 right-2 h-40"/>
+          <img ref={rightOrangeRef} src="/images/orange.png" alt="right-orange" className="absolute right-orange top-1/3 right-2 h-40"/>
           <div className='body'>
             <div className="content"> 
               <div className="space-y-5 hidden md:block">
@@ -85,6 +106,16 @@ const Hero = () => {
               </div>
           </div>
         </section>
+
+      <div className='video absolute inset-0 '>
+        <video
+		      ref={videoRef}
+		      muted
+		      playsInline
+		      preload="auto"
+		      src="/videos/output.mp4"
+		    />
+      </div>
         
     </>
   )
