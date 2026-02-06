@@ -18,57 +18,58 @@ const navLinks = [
 ];
 
 const cocktailLists = [
- {
-	name: "Chapel Hill Shiraz",
-	country: "AU",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Caten Malbee",
-	country: "AU",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Rhino Pale Ale",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Irish Guinness",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+  {
+    name: "Virgin Mojito",
+    country: "MA",
+    detail: "Mint, lime & soda",
+    price: "$6",
+  },
+  {
+    name: "Panaché Citron",
+    country: "MA",
+    detail: "Lemon soda mix",
+    price: "$5",
+  },
+  {
+    name: "Jus d’Avocat",
+    country: "MA",
+    detail: "Avocado smoothie with milk & nuts",
+    price: "$7",
+  },
+  {
+    name: "Orange Blossom Lemonade",
+    country: "MA",
+    detail: "Lemon, orange flower water & mint",
+    price: "$6",
+  }
 ];
+
 
 const mockTailLists = [
  {
-	name: "Tropical Bloom",
-	country: "US",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Passionfruit Mint",
-	country: "US",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Citrus Glow",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Lavender Fizz",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+    name: "Pomegranate Mint Cooler",
+    country: "MA",
+    detail: "Grenadine, mint & sparkling water",
+    price: "$6",
+  },
+  {
+    name: "Iced Tea Citrus",
+    country: "MA",
+    detail: "Moroccan tea with lemon & orange",
+    price: "$5",
+  },
+  {
+  name: "Strawberry Banana Smoothie",
+  country: "MA",
+  detail: "Fresh strawberries, banana & milk",
+  price: "$6",
+},
+{
+  name: "Dates Almond Shake",
+  country: "MA",
+  detail: "Dates, almonds, milk & honey",
+  price: "$7",
+}
 ];
 
 const profileLists = [
